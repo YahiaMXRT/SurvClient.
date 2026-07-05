@@ -22,6 +22,6 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§c Fullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat("   help   \n§3 !fb (FullBright)\n §2 !help (this text)")
+        m.displayToChat("§khelp\n §3 !fb (FullBright)\n §2 !help (this text)")
     }
 });
