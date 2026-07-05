@@ -1,11 +1,8 @@
 const m = ModAPI;
 const toggles = {
-    fullbright: false,
-    packetMoveDisabled: false
+    fullbright: false
 };
-m.addEventListener("motionupdate", (e: any) => {
-    e.preventDefault = toggles.packetMoveDisabled
-})
+
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
 m.addEventListener("sendchatmessage", (e: any) => {
