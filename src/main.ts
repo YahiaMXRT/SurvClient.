@@ -59,9 +59,11 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message == "!packetMove") {
         if (toggles.packetMoveDisabled === false) {
             toggles.packetMoveDisabled = true
+            m.displayToChat("§a Packet enabled");
         }
         if (toggles.packetMoveDisabled === true) {
             toggles.packetMoveDisabled = false
+            m.displayToChat("§c Packet disabled");
         }
     }
     else {
