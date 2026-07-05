@@ -1,11 +1,12 @@
 const m = ModAPI;
-
 const toggles = {
     fullbright: false
 };
 
 m.settings.gammaSetting = 1.0
-
+m.addEventListener("update", () => {
+    m.drawString(m.getFPS(), 10,0,100.0)
+})
 m.addEventListener("sendchatmessage", (e: any) => {
     if (!e.message.startsWith("!")) return;
 
@@ -22,6 +23,9 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§c Fullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat("§khelp\n §3 !fb (FullBright)\n §2 !help (this text)")
+        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)")
+    }
+    else if (e.message === "!help") {
+
     }
 });
