@@ -29,7 +29,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             a2: e.message.split(" ")[1]
         }
         if (args.a2 == "fps") {
-            mcSettings.renderDistanceChunks = 2
+            mcSettings.renderDistanceChunks = 1
             mcSettings.fog = false
             mcSettings.mipmapLevels = 0.0
             mcSettings.clouds = 0.0
@@ -53,6 +53,8 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message === "!version")
     { 
         m.displayToChat("§9 Current Client Version: 0.0.1")
+    } else if (e.message === "!devlog") {
+        m.displayToChat(m.server)
     }
     else {
         m.displayToChat("§c Unknown Command:")
