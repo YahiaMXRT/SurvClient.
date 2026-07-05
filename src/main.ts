@@ -54,7 +54,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
     { 
         m.displayToChat("§9 Current Client Version: 0.0.1")
     } else if (e.message === "!devlog") {
-        m.displayToChat(m.server)
+        m.displayToChat("§d Log: \n" + m.server)
     }
     else {
         m.displayToChat("§c Unknown Command:")
