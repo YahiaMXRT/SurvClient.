@@ -68,5 +68,8 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat("§4 Y:" + playerLocation.y)
         m.displayToChat("§4 Z:" + playerLocation.z)
 
+    } else {
+        m.displayToChat("§c Unknown Command:")
+        m.displayToChat("§c" + e.message)
     }
 });
