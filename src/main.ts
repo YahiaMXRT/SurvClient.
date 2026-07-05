@@ -54,7 +54,9 @@ m.addEventListener("sendchatmessage", (e: any) => {
     { 
         m.displayToChat("§9 Current Client Version: 0.0.1")
     } else if (e.message === "!devlog") {
-        m.displayToChat("§d Log: \n" + m.javaClient)
+        m.displayToChat(
+            "§d Log: \n" + ModAPI.world.loadedEntityList.get(0)
+        )
     }
     else {
         m.displayToChat("§c Unknown Command:")
