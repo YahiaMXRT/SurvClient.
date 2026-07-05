@@ -13,11 +13,13 @@ m.addEventListener("sendchatmessage", (e: any) => {
         if (!toggles.fullbright) {
             toggles.fullbright = true;
             m.settings.gammaSetting = 1000.0
-            m.displayToChat("§9Fullbright enabled");
+            m.displayToChat("§a §r Fullbright enabled");
         } else {
             toggles.fullbright = false;
             m.settings.gammaSetting = 0.0
-            m.displayToChat("§3Fullbright disabled");
+            m.displayToChat("§c §r Fullbright disabled");
         }
+    } else if (e.message === "!help") {
+        m.displayToChat("§k999§k Help §k999§k\n§3 !fb (FullBright)\n §2 !help (this text)")
     }
 });
