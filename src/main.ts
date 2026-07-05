@@ -3,9 +3,9 @@ const toggles = {
     fullbright: false
 };
 var playerLocation={
-    x: Number,
-    y: Number,
-    z: Number
+    x:0,
+    y:0,
+    z:0
 };
 m.addEventListener("sendpacketplayer", (e:any) => {
     playerLocation = {
@@ -63,6 +63,6 @@ m.addEventListener("sendchatmessage", (e: any) => {
         }
     }
     else if (e.message === "!cLocation") {
-        m.displayToChat(`§10Current location\n§4 X: ${playerLocation.x}\n§4 Y: ${playerLocation.y}\n§4 Z: ${playerLocation.z}`)
+        m.displayToChat("§10Current location\n§4 X: " +playerLocation.x +"\n§4 Y: " + playerLocation.y + "\n§4 Z: "+ playerLocation.z)
     }
 });
