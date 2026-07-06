@@ -4,7 +4,7 @@ const toggles = {
 };
 var ev1: any[] = [];
 m.addEventListener("event", (e: any) => {
-    ev1.concat(e.event)
+    ev1.push({event: e.event, data: e.data})
 })
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
@@ -58,7 +58,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat("§9 Current Client Version: 0.0.1")
     } else if (e.message === "!devlog") {
         m.displayToChat(
-            "§d Log: \n" + ev1.map(i => "§e Event: " + i + "\n").join("")
+            "§d Log: \n" + ev1.map(i => "§e Event: " + i.event + "\n§d Data:" + i.data).join("")
         )
     }
     else {
