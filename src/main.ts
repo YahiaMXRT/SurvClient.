@@ -74,7 +74,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat("§9 Current Client Version: 0.0.1")
     } else if (e.message === "!devlog") {
         m.displayToChat(
-            "§d Log: \n" + ev1.map(i => "§e Event: " + i.event + "\n§d Data:" + i.data).join("")
+            "§d Log: \n" + ev1.map(i => "§e Event: " + i.event + "\n§d Data:" + JSON.stringify(i.data)).join("\n")
         )
     }
     else {
