@@ -33,14 +33,14 @@ m.addEventListener("sendchatmessage", (e: any) => {
         if (!toggles.fullbright) {
             toggles.fullbright = true;
             m.settings.gammaSetting = 1000.0
-            m.displayToChat("§a Fullbright enabled");
+            m.displayToChat("§a §lFullbright enabled");
         } else {
             toggles.fullbright = false;
             m.settings.gammaSetting = 1.0
-            m.displayToChat("§c Fullbright disabled");
+            m.displayToChat("§c §lFullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)")
+        m.displayToChat(" §l help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)\n\n §l DEV TOOLS\n§8 !eval (run JS code)\n §7 !devlog (log of events)")
     }
     else if (e.message.startsWith("!mode")) {
         var args = {
@@ -76,6 +76,9 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat(
             "§d Log: \n" + ev1.map(i => "§e Event: " + i.event + "\n§d Data:" + JSON.stringify(i.data)).join("\n")
         )
+    } else if (e.message.startswith("!eval")) {
+        var code = e.message.split("!eval ")[1];
+        m.displayToChat("§d Eval:\n§e " + eval(code))
     }
     else {
         m.displayToChat("§c Unknown Command:")
