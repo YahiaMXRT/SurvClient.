@@ -3,9 +3,25 @@ const toggles = {
     fullbright: false
 };
 var ev1: any[] = [];
+let lastLog = 0;
+
 m.addEventListener("event", (e: any) => {
-    ev1.push({event: e.event, data: e.data})
-})
+    const now = Date.now();
+
+    if (now - lastLog >= 30000) { // 30 seconds
+        lastLog = now;
+
+        ev1.push({
+            time: new Date().toLocaleTimeString(),
+            event: e.event,
+            data: e.data
+        });
+
+        if (ev1.length > 100) {
+            ev1.shift();
+        }
+    }
+});
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
 m.addEventListener("sendchatmessage", (e: any) => {
