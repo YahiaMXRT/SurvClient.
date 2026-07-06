@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './out'),
-    filename: "SurvClient" + ".js", // <--- Will be compiled to this single file
+    filename: 'Client' + ".js", // <--- Will be compiled to this single file
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -30,6 +30,6 @@ module.exports = {
   },
   optimization: {
     mangleExports: 'deterministic',
-    minimize: true,
+    minimize: false,
   },
 };
