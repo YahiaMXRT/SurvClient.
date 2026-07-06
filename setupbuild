@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
 set -e
+echo "Building client ..."
+npm run build > /dev/null
+echo "Client Built."
 
-npm run build
-
+echo "Removing extra files ..."
 rm -rf out/EaglerForge*
+echo "Removed ."
 
-git add .
+git add . > /dev/null
 
-git commit -m "setupbuild commit" || echo "Nothing to commit"
+echo "Commiting to repo..."
+git commit -m "setupbuild commit" || echo "Nothing to commit" > /dev/null
+echo "Git commit finished."
 
-git pull --rebase origin main
-
-git push origin HEAD:main
+echo "Pulling & rebasing git repo..."
+git pull --rebase origin main > /dev/null
+echo "Pulled."
+echo "Pushing to repo..."
+git push origin HEAD:main > /dev/null
+echo "Pushed."
