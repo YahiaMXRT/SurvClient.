@@ -10,14 +10,18 @@ rm -rf out/EaglerForge*
 echo "Removed ."
 
 git add . > /dev/null
-
+echo
+echo
 echo "Commiting to repo..."
 git commit -m "setupbuild commit" || echo "Nothing to commit" > /dev/null
 echo "Git commit finished."
-
+echo
+echo
 echo "Pulling & rebasing git repo..."
 git pull --rebase origin main > /dev/null
 echo "Pulled."
+echo
+echo
 echo "Pushing to repo..."
 git push origin HEAD:main > /dev/null
 echo "Pushed."
