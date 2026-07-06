@@ -10,7 +10,7 @@ SurvClient is a survival basic eaglerforge-based client for 1.12.2 and 1.8 Eagle
 - Go to src Folder in my Github Repo
 
 
-- Open SurvClient.js and click on Raw
+- Open Client.js and click on Raw
 
 
 - Copy link from your browser's Adress bar
