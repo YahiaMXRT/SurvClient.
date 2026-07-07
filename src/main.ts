@@ -1,5 +1,5 @@
-import { initKeystrokes } from "./gui_based_mods/keystr";
-
+import { initKeystrokes, initkeystrokesCSS } from "./gui_based_mods/keystr";
+initkeystrokesCSS()
 const m = ModAPI;
 export const toggles = {
     fullbright: false,
