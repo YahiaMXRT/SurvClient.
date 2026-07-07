@@ -1,3 +1,5 @@
+import { initKeystrokes } from "./gui_based_mods/keystr";
+
 const m = ModAPI;
 export const toggles = {
     fullbright: false,
@@ -41,7 +43,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§c §lFullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat(" §l help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)\n\n §l DEV TOOLS\n§8 !eval (run JS code)\n §7 !devlog (log of events)")
+        m.displayToChat(" §l help\n§3 !fb (FullBright)\n§2 !help (this text)\n§6 !keystrokes (self explanatory)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)\n\n §l DEV TOOLS\n§8 !eval (run JS code)\n §7 !devlog (log of events)")
     }
     else if (e.message.startsWith("!mode")) {
         var args = {
@@ -80,10 +82,13 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message[1] === "e" && e.message === "v" && e.message[1] === "a" && e.message === "l") {
         var code = e.message.split("!eval ")[1];
         m.displayToChat("§d Eval:\n§e " + eval(code))
-    } else if (e.message === "!coords") {
-        m.displayToChat("§d Coords: \n§e X: " + m.player.x + "\n§e Y: " + m.player.y + "\n§e Z: " + m.player.z)
     } else if (e.message === "!keystrokes") {
-
+        if (toggles.keystrokes == true) {
+            toggles.keystrokes = false
+        } else if (toggles.keystrokes == false) {
+            toggles.keystrokes = true
+        }
+        initKeystrokes()
     }
     else {
         m.displayToChat("§c Unknown Command:")
