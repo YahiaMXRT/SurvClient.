@@ -1,4 +1,8 @@
 import { toggles } from "../main";
+var a= document.createElement('link')
+a.rel = "stylesheet"
+a.href = "./keystrokesCSS.css"
+document.head.appendChild(a)
 export var initKeystrokes = () => {
     if (toggles.keystrokes) {
         const keystrokes = document.createElement("div");
