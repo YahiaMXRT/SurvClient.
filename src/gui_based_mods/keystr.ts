@@ -23,7 +23,7 @@ export var initKeystrokes = () => {
                 return;
             }
             keystrokes.innerHTML = `
-                <p>W: ${keysPressed.w}</p></br>
+                <p style="display:block">W: ${keysPressed.w}</p></br>
                 <div style="display:flex;gap:10px;">
                     <p>A: ${keysPressed.a}</p></br>
                     <p>S: ${keysPressed.s}</p></br>
@@ -39,7 +39,7 @@ export var initKeystrokes = () => {
                 return;
             }
             keystrokes.innerHTML = `
-                <p>W: ${keysPressed.w}</p></br>
+                <p style="display:block">W: ${keysPressed.w}</p></br>
                 <div style="display:flex;gap:10px;">
                     <p>A: ${keysPressed.a}</p></br>
                     <p>S: ${keysPressed.s}</p></br>
