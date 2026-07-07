@@ -1,6 +1,7 @@
 const m = ModAPI;
-const toggles = {
-    fullbright: false
+export const toggles = {
+    fullbright: false,
+    keystrokes: false
 };
 var ev1: any[] = [];
 let lastLog = 0;
@@ -81,6 +82,8 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat("§d Eval:\n§e " + eval(code))
     } else if (e.message === "!coords") {
         m.displayToChat("§d Coords: \n§e X: " + m.player.x + "\n§e Y: " + m.player.y + "\n§e Z: " + m.player.z)
+    } else if (e.message === "!keystrokes") {
+
     }
     else {
         m.displayToChat("§c Unknown Command:")
