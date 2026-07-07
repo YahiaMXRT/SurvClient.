@@ -1,4 +1,5 @@
 import { toggles } from "../main";
+import './keystrokesCSS.css';
 export var initkeystrokesCSS = () => {
     var a= document.createElement('link')
     a.rel = "stylesheet"
