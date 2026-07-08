@@ -38,9 +38,9 @@ export var initKeystrokes = () => {
                 keystrokes.innerHTML = `
                     <p style="display:block">${keysPressed.w ? "W" : "w"}</p></br>
                     <div style="display:flex;gap:10px;">
-                        <p>A: ${keysPressed.a ? "A" : "a"}</p></br>
-                        <p>S: ${keysPressed.s ? "S" : "s"}</p></br>
-                        <p>D: ${keysPressed.d ? "D" : "d"}</p></br>
+                        <p>${keysPressed.a ? "A" : "a"}</p></br>
+                        <p>${keysPressed.s ? "S" : "s"}</p></br>
+                        <p>${keysPressed.d ? "D" : "d"}</p></br>
                     </div>
                 `;
             });
