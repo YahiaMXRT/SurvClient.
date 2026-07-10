@@ -1,9 +1,11 @@
 import { initKeystrokes, initkeystrokesCSS } from "./gui_based_mods/keystr";
+import { initFpsMod } from './gui_based_mods/fpsmod'
 initkeystrokesCSS()
 const m = ModAPI;
 export const toggles = {
     fullbright: false,
-    keystrokes: false
+    keystrokes: false,
+    fpsMod: false
 };
 var ev1: any[] = [];
 let lastLog = 0;
@@ -85,10 +87,22 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message === "!keystrokes") {
         if (toggles.keystrokes == true) {
             toggles.keystrokes = false
+            m.displayToChat("§a §lKeystrokes enabled");
         } else if (toggles.keystrokes == false) {
             toggles.keystrokes = true
+            m.displayToChat("§c §lKeystrokes disabled");
         }
         initKeystrokes()
+    } else if (e.message == "!fps") {
+        if (toggles.fpsMod == true) {
+            m.displayToChat("§a §lFPS mod enabled");
+            toggles.fpsMod = false
+            
+        } else if (toggles.fpsMod == false) {
+            m.displayToChat("§c §lFPS mod disabledd");
+            toggles.fpsMod = true
+        }
+        initFpsMod()
     }
     else {
         m.displayToChat("§c Unknown Command:")

@@ -1,0 +1,10 @@
+#fpsm_ {
+    position: absolute;
+    bottom: 30px;
+    top: 20px;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #32989877;
+}
