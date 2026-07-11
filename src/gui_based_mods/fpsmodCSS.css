@@ -1,6 +1,7 @@
 #fpsm_ {
     position: absolute;
     bottom: 30px;
+    color: white;
     top: 20px;
     padding:10px;
     display: flex;

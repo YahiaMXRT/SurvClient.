@@ -99,7 +99,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             toggles.fpsMod = false
             
         } else if (toggles.fpsMod == false) {
-            m.displayToChat("§c §lFPS mod disabledd");
+            m.displayToChat("§c §lFPS mod disabled");
             toggles.fpsMod = true
         }
         initFpsMod()
