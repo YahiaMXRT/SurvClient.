@@ -1,14 +1,26 @@
 #fpsm_ {
     position: absolute;
-    bottom: 30px;
-    color: white;
-    top: 20px;
-    margin: 20px;
-    width: 50px;
-    height: 20px;
-    padding:10px;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    min-width: 56px;
+    height: 36px;
+    padding: 0 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #32989877;
+    color: #f6fbff;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, rgba(50, 152, 152, 0.95), rgba(24, 78, 96, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+}
+
+#fpsm_ .fpsm-inner {
+    font-size: 14px;
+    line-height: 1;
 }
