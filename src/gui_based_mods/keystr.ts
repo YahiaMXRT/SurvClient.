@@ -7,6 +7,28 @@ import {
 // @ts-ignore: side-effect import so webpack can bundle and inject CSS
 import "./keystrokesCSS.css";
 export var keystrokesRndr: HTMLElement;
+let inputListenersBound = false;
+
+const attachInputListeners = () => {
+  if (inputListenersBound) return;
+
+  window.addEventListener("keydown", handlers.keyDown, true);
+  window.addEventListener("keyup", handlers.keyUp, true);
+  window.addEventListener("mousedown", handlers.mouseDown, true);
+  window.addEventListener("mouseup", handlers.mouseUp, true);
+  inputListenersBound = true;
+};
+
+const detachInputListeners = () => {
+  if (!inputListenersBound) return;
+
+  window.removeEventListener("keydown", handlers.keyDown, true);
+  window.removeEventListener("keyup", handlers.keyUp, true);
+  window.removeEventListener("mousedown", handlers.mouseDown, true);
+  window.removeEventListener("mouseup", handlers.mouseUp, true);
+  inputListenersBound = false;
+};
+
 export var initkeystrokesCSS = () => {
   // CSS is imported at module load; with style-loader it will be injected automatically.
 };
@@ -14,24 +36,14 @@ export var initkeystrokesCSS = () => {
 export var initKeystrokes = () => {
   const existing = document.getElementById("keystrokes_") as HTMLElement | null;
   if (toggles.keystrokes) {
-    const keystrokes = existing ?? document.createElement("div");    
+    const keystrokes = existing ?? document.createElement("div");
     keystrokes.id = "keystrokes_";
     if (!existing) document.body.appendChild(keystrokes);
-    keystrokesRndr = keystrokes
-    // Only attach listeners once when creating the element
-    if (!existing) {
-      window.addEventListener("keydown", handlers.keyDown);
-
-      window.addEventListener("keyup", handlers.keyUp);
-      document.addEventListener("mousedown", handlers.mouseDown);
-      document.addEventListener("mouseup", handlers.mouseUp);
-    }
+    keystrokesRndr = keystrokes;
+    attachInputListeners();
   } else {
     const el = document.getElementById("keystrokes_");
-    window.removeEventListener("keydown", handlers.keyDown)
-    window.removeEventListener("keyup", handlers.keyUp)
-    window.removeEventListener("mousedown", handlers.mouseDown)
-    window.removeEventListener("mouseup", handlers.mouseUp)
+    detachInputListeners();
     if (el) el.remove();
   }
 };
